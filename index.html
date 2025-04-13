@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ichigo - Healthy Meals for Students</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .hero-section {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("C:/Users/M Amruth Sai/Downloads/venu website/assets/background.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .goal-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 20px;
+        }
+        
+        .goal-card:hover .card-img {
+            transform: scale(1.05);
+        }
+        
+        .goal-card.selected {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border: 2px solid #fbff00;
+        }
+        
+        .card-img {
+            transition: transform 0.5s ease;
+        }
+        
+        .input-focus:focus {
+            border-color: #ffe100;
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+        }
+        
+        .pricing-card {
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-box {
+            transition: all 0.3s ease;
+        }
+        
+        .feature-box:hover {
+            transform: translateY(-5px);
+        }
+        
+        .testimonial-slider {
+            overflow-x: hidden;
+        }
+        
+        .testimonial-slide {
+            min-width: 100%;
+            transition: transform 0.5s ease;
+        }
+        
+        .bg-blur {
+            backdrop-filter: blur(8px);
+            background-color: rgba(25, 20, 20, 0.829);
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .float-animation {
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white bg-opacity-90 backdrop-filter backdrop-blur-lg shadow-md">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <h1 class="text-3xl font-bold text-green-500">
+                        <i class="fas fa-seedling mr-2"></i>Ichigo
+                    </h1>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#intro" class="text-gray-600 hover:text-green-500 font-medium">Home</a>
+                    <a href="#about" class="text-gray-600 hover:text-green-500 font-medium">About</a>
+                    <a href="#goals" class="text-gray-600 hover:text-green-500 font-medium">Your Plan</a>
+                    <a href="#menu" class="text-gray-600 hover:text-green-500 font-medium">Menu</a>
+                    <a href="#pricing" class="text-gray-600 hover:text-green-500 font-medium">Pricing</a>
+                    <a href="#contact" class="text-gray-600 hover:text-green-500 font-medium">Contact</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-6 rounded-full transition">
+                        Sign Up
+                    </button>
+                    <button class="md:hidden text-gray-500 hover:text-green-500">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="intro" class="hero-section">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl text-white">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                    Fuel Your Body, <span class="text-green-400">Focus Your Mind</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-10 text-gray-200">
+                    Ichigo delivers personalized, nutritionally-balanced meals crafted specifically for students. Whether you want to get lean or bulk up, we've got the perfect meal plan for your fitness journey.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
+                    <a href="#goals" class="bg-green-500 hover:bg-green-600 text-white text-center font-bold py-4 px-8 rounded-full transition transform hover:scale-105 text-lg">
+                        Get Started
+                    </a>
+                    <a href="#menu" class="border-2 border-white text-white hover:bg-white hover:text-green-500 text-center font-bold py-4 px-8 rounded-full transition transform hover:scale-105 text-lg">
+                        View Menu
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-green-500 font-bold uppercase tracking-wider">Why Choose Ichigo</span>
+                <h2 class="text-4xl md:text-5xl font-bold mt-2 mb-4">Healthy Food, Happy Students</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    We understand the unique needs of students and provide high-quality, nutritionally balanced meals to support your academic and fitness goals.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
+                <!-- Feature 1 -->
+                <div class="feature-box bg-gray-50 rounded-3xl p-8 text-center shadow-lg">
+                    <div class="flex justify-center">
+                        <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                            <i class="fas fa-utensils text-green-500 text-3xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Nutrient-Rich</h3>
+                    <p class="text-gray-600">
+                        All meals are crafted with fresh ingredients to maximize nutritional value and support your health goals.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-box bg-gray-50 rounded-3xl p-8 text-center shadow-lg">
+                    <div class="flex justify-center">
+                        <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                            <i class="fas fa-dumbbell text-green-500 text-3xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Goal-Oriented</h3>
+                    <p class="text-gray-600">
+                        Customized meal plans designed specifically for your fitness goals, whether bulking or cutting.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-box bg-gray-50 rounded-3xl p-8 text-center shadow-lg">
+                    <div class="flex justify-center">
+                        <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                            <i class="fas fa-clock text-green-500 text-3xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Time-Saving</h3>
+                    <p class="text-gray-600">
+                        Ready-to-eat meals delivered to your door, saving you precious time for studies and activities.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section with Image -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 pr-0 md:pr-10">
+                    <img src="/api/placeholder/600/600" alt="Students enjoying healthy meals" class="rounded-3xl shadow-xl w-full float-animation">
+                </div>
+                <div class="md:w-1/2">
+                    <span class="text-green-500 font-bold uppercase tracking-wider">Our Story</span>
+                    <h2 class="text-4xl font-bold mb-6 mt-2">Created By Students, For Students</h2>
+                    <p class="text-lg text-gray-700 mb-6">
+                        Ichigo was founded by a group of university students who were tired of unhealthy campus food options and the lack of time to prepare nutritious meals while focusing on studies.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-8">
+                        We understand the challenges of student life – tight budgets, busy schedules, and the desire to stay healthy. That's why we've created affordable, convenient meal plans that support your academic performance and fitness goals.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 text-2xl mr-3"></i>
+                            <span class="text-gray-800 font-medium">Nutritionist Approved</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 text-2xl mr-3"></i>
+                            <span class="text-gray-800 font-medium">Fresh Ingredients</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 text-2xl mr-3"></i>
+                            <span class="text-gray-800 font-medium">Sustainable Packaging</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 text-2xl mr-3"></i>
+                            <span class="text-gray-800 font-medium">Student Discounts</span>
+                        </div>
+                    </div>
+                    <a href="#" class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full transition transform hover:scale-105">
+                        Learn More About Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: User Input & Goal Selection -->
+    <section id="goals" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-green-500 font-bold uppercase tracking-wider">Personalized For You</span>
+                <h2 class="text-4xl md:text-5xl font-bold mt-2 mb-4">Find Your Perfect Meal Plan</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Enter your details and select your fitness goal to get customized meal recommendations that match your nutritional needs.
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto bg-gray-50 rounded-3xl shadow-xl overflow-hidden">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-2/5 bg-green-500 p-10 text-white">
+                        <h3 class="text-3xl font-bold mb-6">Your Details</h3>
+                        <p class="mb-8">
+                            We use your height, weight, and age to calculate your basal metabolic rate and daily caloric needs.
+                        </p>
+                        <div class="mb-6">
+                            <label for="height" class="block text-white mb-2 font-medium">Height (cm)</label>
+                            <input type="number" id="height" class="w-full px-4 py-3 rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-white" placeholder="175">
+                        </div>
+                        <div class="mb-6">
+                            <label for="weight" class="block text-white mb-2 font-medium">Weight (kg)</label>
+                            <input type="number" id="weight" class="w-full px-4 py-3 rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-white" placeholder="70">
+                        </div>
+                        <div>
+                            <label for="age" class="block text-white mb-2 font-medium">Age</label>
+                            <input type="number" id="age" class="w-full px-4 py-3 rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-white" placeholder="21">
+                        </div>
+                    </div>
+                    <div class="md:w-3/5 p-10">
+                        <h3 class="text-3xl font-bold mb-6">Select Your Fitness Goal</h3>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                            <!-- Get Lean Card -->
+                            <div id="lean-card" class="goal-card bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+                                <div class="h-48 overflow-hidden">
+                                    <img src="C:/Users/M Amruth Sai/Downloads/venu website/assets/fitman.jpg" alt="Athletic body type" class="w-full h-full object-cover card-img">
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold mb-2">Get Lean</h3>
+                                    <p class="text-gray-600 mb-4">Perfect for those wanting to reduce body fat while maintaining muscle.</p>
+                                    <div class="flex items-center">
+                                        <div class="h-5 w-5 rounded-full border-2 border-green-500 flex items-center justify-center mr-3">
+                                            <div id="lean-dot" class="h-3 w-3 rounded-full bg-green-500 hidden"></div>
+                                        </div>
+                                        <span class="text-green-500 font-medium">Select This Goal</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Get Bulk Card -->
+                            <div id="bulk-card" class="goal-card bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+                                <div class="h-48 overflow-hidden">
+                                    <img src="C:/Users/M Amruth Sai/Downloads/venu website/assets/bulkman.jpg" alt="Muscular body type" class="w-full h-full object-cover card-img">
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold mb-2">Get Bulk</h3>
+                                    <p class="text-gray-600 mb-4">Designed for muscle growth and strength gains with protein-rich meals.</p>
+                                    <div class="flex items-center">
+                                        <div class="h-5 w-5 rounded-full border-2 border-green-500 flex items-center justify-center mr-3">
+                                            <div id="bulk-dot" class="h-3 w-3 rounded-full bg-green-500 hidden"></div>
+                                        </div>
+                                        <span class="text-green-500 font-medium">Select This Goal</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-6 rounded-xl transition transform hover:scale-105">
+                            Find My Meal Plan
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meal Plan Recommendations (initially shown for demo) -->
+    <section id="menu" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-green-500 font-bold uppercase tracking-wider">Featured Meal Plans</span>
+                <h2 class="text-4xl md:text-5xl font-bold mt-2 mb-4">Popular Student Choices</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Browse our most popular meal plans designed specifically for students with different fitness goals.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Meal Plan 1 -->
+                <div class="bg-white rounded-3xl shadow-lg overflow-hidden">
+                    <div class="relative">
+                        <img src="/api/placeholder/600/400" alt="Lean Meal Plan" class="w-full h-56 object-cover">
+                        <div class="absolute top-4 left-4 bg-green-500 text-white font-bold py-1 px-4 rounded-full">
+                            Most Popular
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3">Lean Student</h3>
+                        <p class="text-gray-600 mb-4">2000 calories with optimal protein for fat loss while preserving muscle mass.</p>
+                        <div class="mb-6">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-600">Protein</span>
+                                <span class="font-bold">120g</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-green-500 h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-600">Carbs</span>
+                                <span class="font-bold">200g</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-green-500 h-2 rounded-full" style="width: 55%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-8">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-600">Fat</span>
+                                <span class="font-bold">65g</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-green-500 h-2 rounded-full" style="width: 40%"></div>
+                            </div>
+                        </div>
+                        <button class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-xl transition transform hover:scale-105">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Meal Plan 2 -->
+                <div class="bg-white rounded-3xl shadow-lg overflow-hidden">
+                    <div class="relative">
+                        <img src="/api/placeholder/600/400" alt="Balanced Meal Plan" class="w-full h-56 object-cover">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3">Balanced Student</h3>
+                        <p class="text-gray-600 mb-4">2500 calories with balanced macros for maintaining weight and energy levels.</p>
+                        <div class="mb-6">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-600">Protein</span>
+                                <span class="font-bold">130g</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-green-500 h-2 rounded-full" style="width: 65%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-600">Carbs</span>
+                                <span class="font-bold">275g</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-green-500 h-2 rounded-full" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-8">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-600">Fat</span>
+                                <span class="font-bold">75g</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-green-500 h-2 rounded-full" style="width: 50%"></div>
+                            </div>
+                        </div>
+                        <button class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-xl transition transform hover:scale-105">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Meal Plan 3 -->
+                <div class="bg-white rounded-3xl shadow-lg overflow-hidden">
+                    <div class="relative">
+                        <img src="/api/placeholder/600/400" alt="Bulk Meal Plan" class="w-full h-56 object-cover">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3">Bulk Student</h3>
+                        <p class="text-gray-600 mb-4">3000 calories with higher protein and carbs for muscle growth and recovery.</p>
+                        <div class="mb-6">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-600">Protein</span>
+                                <span class="font-bold">180g</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-green-500 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-600">Carbs</span>
+                                <span class="font-bold">350g</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-green-500 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-8">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-600">Fat</span>
+                                <span class="font-bold">90g</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-green-500 h-2 rounded-full" style="width: 60%"></div>
+                            </div>
+                        </div>
+                        <button class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-xl transition transform hover:scale-105">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-green-500 font-bold uppercase tracking-wider">What Students Say</span>
+                <h2 class="text-4xl md:text-5xl font-bold mt-2 mb-4">Trusted by Students</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Hear from students who have transformed their eating habits and achieved their fitness goals with Ichigo.
+                </p>
+            </div>
+
+            <div class="relative max-w-5xl mx-auto">
+                <div class="testimonial-slider">
+                    <div class="testimonial-slide">
+                        <div class="bg-gray-50 rounded-3xl p-10 md:p-12 shadow-lg">
+                            <div class="flex flex-col md:flex-row items-center md:items-start mb-6">
+                                <img src="/api/placeholder/200/200" alt="Student" class="w-20 h-20 rounded-full object-cover mb-4 md:mb-0 md:mr-6">
+                                <div>
+                                    <h3 class="text-xl font-bold mb-1">Alex Thompson</h3>
+                                    <p class="text-gray-600 mb-3">Computer Science Student</p>
+                                    <div class="flex text-yellow-400 mb-2">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-lg text-gray-700">
+                                "Ichigo completely changed how I approach nutrition during my studies. With their meal plans, I've been able to lose 15 pounds while maintaining my energy for long coding sessions. The convenience of having healthy meals delivered to my door is a game-changer for busy students like me."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center mt-8">
+                    <div class="w-3 h-3 rounded-full bg-green-500 mx-1"></div>
+                    <div class="w-3 h-3 rounded-full bg-gray-300 mx-1"></div>
+                    <div class="w-3 h-3 rounded-full bg-gray-300 mx-1"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Pricing Plans -->
+    <section id="pricing" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-green-500 font-bold uppercase tracking-wider">Affordable Options</span>
+                <h2 class="text-4xl md:text-5xl font-bold mt-2 mb-4">Plans That Fit Your Budget</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Choose the plan that works best for your lifestyle and nutritional needs.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Basic Plan -->
+                <div class="pricing-card bg-white rounded-3xl shadow-lg overflow-hidden">
+                    <div class="p-8">
+                        <div class="flex items-center justify-center h-20 w-20 rounded-full bg-green-100 mx-auto mb-6">
+                            <i class="fas fa-leaf text-green-500 text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-center mb-2">Basic</h3>
+                        <div class="text-center">
+                            <span class="text-gray-500 text-lg line-through">₹7000</span>
+                            <div class="text-green-500 font-bold text-5xl my-4">₹6000<span class="text-lg text-gray-500 font-normal">/month</span></div>
+                        </div>
+                        <p class="text-gray-600 text-center mb-8">Perfect for students on a budget</p>
+                        <div class="border-t border-gray-100 pt-8">
+                            <ul class="mb-8 space-y-4">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>5 meals per week</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>Standard meal options</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>Basic nutritional info</span>
+                                </li>
+                                <li class="flex items-center text-gray-400">
+                                    <i class="fas fa-times-circle mr-3"></i>
+                                    <span class="line-through">Custom meal plans</span>
+                                </li>
+                                <li class="flex items-center text-gray-400">
+                                    <i class="fas fa-times-circle mr-3"></i>
+                                    <span class="line-through">Premium recipes</span>
+                                </li>
+                            </ul>
+                            <button class="w-full bg-gray-100 hover:bg-green-500 hover:text-white text-green-500 font-bold py-3 px-4 rounded-xl transition">
+                                Select Plan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Popular Plan -->
+                <div class="pricing-card bg-white rounded-3xl shadow-xl overflow-hidden transform scale-105 z-10 border-2 border-green-500">
+                    <div class="p-8">
+                        <div class="flex justify-center">
+                            <span class="bg-green-500 text-white text-sm font-bold px-4 py-1 rounded-full mb-4">Most Popular</span>
+                        </div>
+                        <div class="flex items-center justify-center h-20 w-20 rounded-full bg-green-100 mx-auto mb-6">
+                            <i class="fas fa-fire text-green-500 text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-center mb-2">Standard</h3>
+                        <div class="text-center">
+                            <span class="text-gray-500 text-lg line-through">₹12000</span>
+                            <div class="text-green-500 font-bold text-5xl my-4">₹10000<span class="text-lg text-gray-500 font-normal">/month</span></div>
+                        </div>
+                        <p class="text-gray-600 text-center mb-8">Great for most students</p>
+                        <div class="border-t border-gray-100 pt-8">
+                            <ul class="mb-8 space-y-4">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>10 meals per week</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>Premium meal options</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>Detailed nutritional info</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>Basic customizations</span>
+                                </li>
+                                <li class="flex items-center text-gray-400">
+                                    <i class="fas fa-times-circle mr-3"></i>
+                                    <span class="line-through">Full meal plan customization</span>
+                                </li>
+                            </ul>
+                            <button class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-xl transition">
+                                Select Plan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Premium Plan -->
+                <div class="pricing-card bg-white rounded-3xl shadow-lg overflow-hidden">
+                    <div class="p-8">
+                        <div class="flex items-center justify-center h-20 w-20 rounded-full bg-green-100 mx-auto mb-6">
+                            <i class="fas fa-crown text-green-500 text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-center mb-2">Premium</h3>
+                        <div class="text-center">
+                            <span class="text-gray-500 text-lg line-through">₹16000</span>
+                            <div class="text-green-500 font-bold text-5xl my-4">₹15000<span class="text-lg text-gray-500 font-normal">/month</span></div>
+                        </div>
+                        <p class="text-gray-600 text-center mb-8">For serious fitness goals</p>
+                        <div class="border-t border-gray-100 pt-8">
+                            <ul class="mb-8 space-y-4">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>14 meals per week</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>All premium meal options</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>Complete nutritional breakdown</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>Fully customized meal plans</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>Weekly nutritionist consultation</span>
+                                </li>
+                            </ul>
+                            <button class="w-full bg-gray-100 hover:bg-green-500 hover:text-white text-green-500 font-bold py-3 px-4 rounded-xl transition">
+                                Select Plan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <p class="text-gray-600 mb-6">Need help choosing? Contact our nutrition experts.</p>
+                <a href="#contact" class="inline-block border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-white font-bold py-3 px-8 rounded-full transition">
+                    Get Personalized Advice
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-green-500 font-bold uppercase tracking-wider">Get In Touch</span>
+                <h2 class="text-4xl md:text-5xl font-bold mt-2 mb-4">Have Questions?</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    We're here to help you find the perfect meal plan for your student lifestyle.
+                </p>
+            </div>
+
+            <div class="flex flex-col md:flex-row max-w-6xl mx-auto bg-gray-50 rounded-3xl shadow-xl overflow-hidden">
+                <div class="md:w-2/5 bg-green-500 p-10 text-white">
+                    <h3 class="text-3xl font-bold mb-6">Contact Information</h3>
+                    <p class="mb-8">
+                        Fill out the form or reach out to us directly through these channels.
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-4 text-xl"></i>
+                            <div>
+                                <h4 class="font-bold mb-1">Our Location</h4>
+                                <p>123 Campus Drive, University District</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-4 text-xl"></i>
+                            <div>
+                                <h4 class="font-bold mb-1">Email Us</h4>
+                                <p>hello@ichigomeals.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-4 text-xl"></i>
+                            <div>
+                                <h4 class="font-bold mb-1">Call Us</h4>
+                                <p>(555) 123-4567</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-10">
+                        <h4 class="font-bold mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-3/5 p-10">
+                    <form>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-green-500 input-focus" placeholder="Your name">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-green-500 input-focus" placeholder="your@email.com">
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-green-500 input-focus" placeholder="How can we help?">
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-green-500 input-focus" placeholder="Your message..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-6 rounded-xl transition transform hover:scale-105">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-green-500 font-bold uppercase tracking-wider">Help Center</span>
+                <h2 class="text-4xl md:text-5xl font-bold mt-2 mb-4">Frequently Asked Questions</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Find answers to common questions about our meal plans and services.
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-3xl shadow-lg overflow-hidden">
+                    <!-- FAQ Item 1 -->
+                    <div class="border-b border-gray-100">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 hover:bg-gray-50 transition">
+                            <h3 class="text-lg font-bold text-left">How does the meal delivery work?</h3>
+                            <i class="fas fa-chevron-down text-green-500 transition-transform"></i>
+                        </button>
+                        <div class="faq-content px-6 pb-6 hidden">
+                            <p class="text-gray-600">
+                                We deliver fresh, ready-to-eat meals to your doorstep twice a week (Mondays and Thursdays). All meals are packaged in microwave-safe containers with clear heating instructions. Simply store them in your fridge and heat when ready to eat.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 2 -->
+                    <div class="border-b border-gray-100">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 hover:bg-gray-50 transition">
+                            <h3 class="text-lg font-bold text-left">Can I customize my meal plan?</h3>
+                            <i class="fas fa-chevron-down text-green-500 transition-transform"></i>
+                        </button>
+                        <div class="faq-content px-6 pb-6 hidden">
+                            <p class="text-gray-600">
+                                Yes! Our Standard and Premium plans allow for meal customizations. You can specify dietary restrictions, allergies, and preferences. Premium plan members get full customization with weekly consultations from our nutritionists.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 3 -->
+                    <div class="border-b border-gray-100">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 hover:bg-gray-50 transition">
+                            <h3 class="text-lg font-bold text-left">Do you accommodate special diets?</h3>
+                            <i class="fas fa-chevron-down text-green-500 transition-transform"></i>
+                        </button>
+                        <div class="faq-content px-6 pb-6 hidden">
+                            <p class="text-gray-600">
+                                Absolutely. We offer vegetarian, vegan, gluten-free, dairy-free, and other specialty options. Just let us know about your dietary needs when you sign up, and we'll tailor your meals accordingly.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 4 -->
+                    <div class="border-b border-gray-100">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 hover:bg-gray-50 transition">
+                            <h3 class="text-lg font-bold text-left">What if I need to skip a week?</h3>
+                            <i class="fas fa-chevron-down text-green-500 transition-transform"></i>
+                        </button>
+                        <div class="faq-content px-6 pb-6 hidden">
+                            <p class="text-gray-600">
+                                No problem! You can pause your subscription anytime with at least 5 days notice before your next delivery. This is perfect for exam weeks, holidays, or when you'll be away from campus.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 5 -->
+                    <div class="border-b border-gray-100">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 hover:bg-gray-50 transition">
+                            <h3 class="text-lg font-bold text-left">Is there a student discount?</h3>
+                            <i class="fas fa-chevron-down text-green-500 transition-transform"></i>
+                        </button>
+                        <div class="faq-content px-6 pb-6 hidden">
+                            <p class="text-gray-600">
+                                Yes! All our prices already include a 20% student discount. Just verify your student status during signup to maintain these special rates throughout your subscription.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <p class="text-gray-600 mb-6">Still have questions? We're happy to help!</p>
+                    <a href="#contact" class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full transition transform hover:scale-105">
+                        Contact Our Team
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-green-500 text-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-2/3 mb-8 md:mb-0">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Transform Your Eating Habits?</h2>
+                    <p class="text-xl text-green-100">
+                        Join thousands of students who are eating better, feeling better, and performing better with Ichigo.
+                    </p>
+                </div>
+                <div class="md:w-1/3 text-center md:text-right">
+                    <a href="#goals" class="inline-block bg-white text-green-500 hover:bg-gray-100 font-bold py-4 px-8 rounded-full transition transform hover:scale-105 text-lg">
+                        Get Started Today
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                <div>
+                    <h3 class="text-3xl font-bold text-green-500 mb-4">
+                        <i class="fas fa-seedling mr-2"></i>Ichigo
+                    </h3>
+                    <p class="text-gray-400 mb-4">
+                        Healthy, convenient meals designed specifically for students to support their academic and fitness goals.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-green-500 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-green-500 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-green-500 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-green-500 transition">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#intro" class="text-gray-400 hover:text-green-500 transition">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-green-500 transition">About Us</a></li>
+                        <li><a href="#goals" class="text-gray-400 hover:text-green-500 transition">Meal Plans</a></li>
+                        <li><a href="#menu" class="text-gray-400 hover:text-green-500 transition">Menu</a></li>
+                        <li><a href="#pricing" class="text-gray-400 hover:text-green-500 transition">Pricing</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Support</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-green-500 transition">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-green-500 transition">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-green-500 transition">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-green-500 transition">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-green-500 transition">Shipping Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact Info</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-green-500"></i>
+                            <span class="text-gray-400">123 Campus Drive<br>University District</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-green-500"></i>
+                            <span class="text-gray-400">hello@ichigomeals.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-green-500"></i>
+                            <span class="text-gray-400">(555) 123-4567</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 mb-4 md:mb-0">
+                    &copy; 2023 Ichigo. All rights reserved.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-500 hover:text-green-500 transition">Privacy Policy</a>
+                    <a href="#" class="text-gray-500 hover:text-green-500 transition">Terms of Service</a>
+                    <a href="#" class="text-gray-500 hover:text-green-500 transition">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-6 right-6 bg-green-500 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition opacity-0 invisible hover:bg-green-600">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // FAQ Toggle
+        const faqToggles = document.querySelectorAll('.faq-toggle');
+        
+        faqToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const content = toggle.nextElementSibling;
+                const icon = toggle.querySelector('i');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+        
+        // Goal Selection
+        const leanCard = document.getElementById('lean-card');
+        const bulkCard = document.getElementById('bulk-card');
+        const leanDot = document.getElementById('lean-dot');
+        const bulkDot = document.getElementById('bulk-dot');
+        
+        leanCard.addEventListener('click', () => {
+            leanCard.classList.add('selected');
+            bulkCard.classList.remove('selected');
+            leanDot.classList.remove('hidden');
+            bulkDot.classList.add('hidden');
+        });
+        
+        bulkCard.addEventListener('click', () => {
+            bulkCard.classList.add('selected');
+            leanCard.classList.remove('selected');
+            bulkDot.classList.remove('hidden');
+            leanDot.classList.add('hidden');
+        });
+        
+        // Mobile Menu Toggle (placeholder - would need actual implementation)
+        const mobileMenuButton = document.querySelector('.md\\:hidden');
+        mobileMenuButton.addEventListener('click', () => {
+            // This would toggle a mobile menu in a real implementation
+            console.log('Mobile menu would open');
+        });
+    </script>
+</body>
+</html>
